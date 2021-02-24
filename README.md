@@ -7,7 +7,10 @@ Source code for Github page of KWB-R community under:
 
 ## (KWB-)R package status overview
 
-* **New version:** [http://kwb-r.github.io/pkgstatus/v2/](http://kwb-r.github.io/pkgstatus/v2/)
+* **New version:** 
+  - [http://kwb-r.github.io/pkgstatus/v2/](http://kwb-r.github.io/pkgstatus/v2/) or 
+  - [https://kwb-r.github.io/status/](https://kwb-r.github.io/status/) (built using `GitHub Actions` workflow, see: https://github.com/KWB-R/status/actions)
+  
 * **Old version:** [http://kwb-r.github.io/pkgstatus/v1/](http://kwb-r.github.io/pkgstatus/v1/)
 
 Acknowlegement
