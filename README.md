@@ -5,6 +5,10 @@ Source code for Github page of KWB-R community under:
 
 [http://kwb-r.github.io](http://kwb-r.github.io)
 
+## (KWB-)R package status overview
+
+* **New version:** [http://kwb-r.github.io/pkgstatus/v2/](http://kwb-r.github.io/pkgstatus/v2/)
+* **Old version:** [http://kwb-r.github.io/pkgstatus/v1/](http://kwb-r.github.io/pkgstatus/v1/)
 
 Acknowlegement
 =================
