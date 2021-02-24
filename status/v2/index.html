@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="" />
+
+
+<title>Status Report</title>
+
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
+<link href="index_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Status Report</h1>
+<h4 class="date">2021-02-24 15:20:12</h4>
+
+</div>
+
+
+<table>
+<colgroup>
+<col width="4%" />
+<col width="5%" />
+<col width="6%" />
+<col width="10%" />
+<col width="13%" />
+<col width="9%" />
+<col width="8%" />
+<col width="7%" />
+<col width="4%" />
+<col width="4%" />
+<col width="13%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Repository</th>
+<th align="center">License</th>
+<th align="center">License_Badge</th>
+<th align="center">Tests_Coverage.io</th>
+<th align="center">Build_Windows</th>
+<th align="center">Build_Linux</th>
+<th align="center">Released_on_CRAN</th>
+<th align="center">Citation_DigitalObjectIdentifer</th>
+<th align="center">Doc_Rel</th>
+<th align="center">Doc_Dev</th>
+<th align="center">Backup</th>
+<th align="center">OpenCpu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/algoliar">algoliar</a></td>
+<td align="center"><a href="https://github.com/KWB-R/algoliar/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/algoliar"><img src="https://codecov.io/github/KWB-R/algoliar/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/algoliar/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/algoliar?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/algoliar"><img src="https://travis-ci.org/KWB-R/algoliar.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/algoliar"><img src="http://www.r-pkg.org/badges/version/algoliar" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/algoliar/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/algoliar'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/aquanes.report">aquanes.report</a></td>
+<td align="center"><a href="https://github.com/KWB-R/aquanes.report/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/aquanes.report"><img src="https://codecov.io/github/KWB-R/aquanes.report/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/aquanes-report/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/aquanes.report?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/aquanes.report"><img src="https://travis-ci.org/KWB-R/aquanes.report.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/aquanes.report"><img src="http://www.r-pkg.org/badges/version/aquanes.report" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.1244103"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.1244103.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/aquanes.report/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/aquanes.report/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/fakin.path.app">fakin.path.app</a></td>
+<td align="center"><a href="https://github.com/KWB-R/fakin.path.app/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/fakin.path.app"><img src="https://codecov.io/github/KWB-R/fakin.path.app/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/fakin-path-app/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/fakin.path.app?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/fakin.path.app"><img src="https://travis-ci.org/KWB-R/fakin.path.app.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/fakin.path.app"><img src="http://www.r-pkg.org/badges/version/fakin.path.app" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3603503"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3603503.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/fakin.path.app/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/fakin.path.app/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/fhpredict">fhpredict</a></td>
+<td align="center"><a href="https://github.com/KWB-R/fhpredict/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/fhpredict"><img src="https://codecov.io/github/KWB-R/fhpredict/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/fhpredict/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/fhpredict?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/fhpredict"><img src="https://travis-ci.org/KWB-R/fhpredict.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/fhpredict"><img src="http://www.r-pkg.org/badges/version/fhpredict" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.4133893"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.4133893.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/fhpredict/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/fhpredict/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/fhpredict'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.base">kwb.base</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.base/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.base"><img src="https://codecov.io/github/KWB-R/kwb.base/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-base/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.base?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.base"><img src="https://travis-ci.org/KWB-R/kwb.base.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.base"><img src="http://www.r-pkg.org/badges/version/kwb.base" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.base/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.base/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.base'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.budget">kwb.budget</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.budget/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.budget"><img src="https://codecov.io/github/KWB-R/kwb.budget/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-budget/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.budget?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.budget"><img src="https://travis-ci.org/KWB-R/kwb.budget.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.budget"><img src="http://www.r-pkg.org/badges/version/kwb.budget" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.budget/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.code">kwb.code</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.code/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.code"><img src="https://codecov.io/github/KWB-R/kwb.code/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-code/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.code?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.code"><img src="https://travis-ci.org/KWB-R/kwb.code.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.code"><img src="http://www.r-pkg.org/badges/version/kwb.code" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3385171"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3385171.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.code/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.datetime">kwb.datetime</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.datetime/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.datetime"><img src="https://codecov.io/github/KWB-R/kwb.datetime/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-datetime/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.datetime?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.datetime"><img src="https://travis-ci.org/KWB-R/kwb.datetime.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.datetime"><img src="http://www.r-pkg.org/badges/version/kwb.datetime" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3484082"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3484082.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.datetime/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.datetime/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.db">kwb.db</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.db/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.db"><img src="https://codecov.io/github/KWB-R/kwb.db/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-db/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.db?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.db"><img src="https://travis-ci.org/KWB-R/kwb.db.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.db"><img src="http://www.r-pkg.org/badges/version/kwb.db" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3901204"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3901204.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.db/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.db/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.default">kwb.default</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.default/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.default"><img src="https://codecov.io/github/KWB-R/kwb.default/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-default/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.default?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.default"><img src="https://travis-ci.org/KWB-R/kwb.default.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.default"><img src="http://www.r-pkg.org/badges/version/kwb.default" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.default/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.default'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.demeau">kwb.demeau</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.demeau/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.demeau"><img src="https://codecov.io/github/KWB-R/kwb.demeau/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-demeau/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.demeau?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.demeau"><img src="https://travis-ci.org/KWB-R/kwb.demeau.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.demeau"><img src="http://www.r-pkg.org/badges/version/kwb.demeau" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.demeau/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.demeau'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.dwa.m150">kwb.dwa.m150</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.dwa.m150/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.dwa.m150"><img src="https://codecov.io/github/KWB-R/kwb.dwa.m150/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-dwa-m150/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.dwa.m150?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.dwa.m150"><img src="https://travis-ci.org/KWB-R/kwb.dwa.m150.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.dwa.m150"><img src="http://www.r-pkg.org/badges/version/kwb.dwa.m150" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.dwa.m150/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.dwd">kwb.dwd</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.dwd/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.dwd"><img src="https://codecov.io/github/KWB-R/kwb.dwd/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-dwd/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.dwd?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.dwd"><img src="https://travis-ci.org/KWB-R/kwb.dwd.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.dwd"><img src="http://www.r-pkg.org/badges/version/kwb.dwd" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3581172"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3581172.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.dwd/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.dwd/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.en13508.2">kwb.en13508.2</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.en13508.2/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.en13508.2"><img src="https://codecov.io/github/KWB-R/kwb.en13508.2/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-en13508-2/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.en13508.2?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.en13508.2"><img src="https://travis-ci.org/KWB-R/kwb.en13508.2.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.en13508.2"><img src="http://www.r-pkg.org/badges/version/kwb.en13508.2" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.en13508.2/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.endnote">kwb.endnote</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.endnote/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.endnote"><img src="https://codecov.io/github/KWB-R/kwb.endnote/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-endnote/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.endnote?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.endnote"><img src="https://travis-ci.org/KWB-R/kwb.endnote.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.endnote"><img src="http://www.r-pkg.org/badges/version/kwb.endnote" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604072"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604072.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.endnote/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.endnote'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.event">kwb.event</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.event/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.event"><img src="https://codecov.io/github/KWB-R/kwb.event/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-event/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.event?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.event"><img src="https://travis-ci.org/KWB-R/kwb.event.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.event"><img src="http://www.r-pkg.org/badges/version/kwb.event" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.event/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.fakin">kwb.fakin</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.fakin/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.fakin"><img src="https://codecov.io/github/KWB-R/kwb.fakin/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-fakin/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.fakin?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.fakin"><img src="https://travis-ci.org/KWB-R/kwb.fakin.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.fakin"><img src="http://www.r-pkg.org/badges/version/kwb.fakin" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.1309312"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.1309312.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.fakin/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.fakin/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.fakin'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.file">kwb.file</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.file/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.file"><img src="https://codecov.io/github/KWB-R/kwb.file/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-file/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.file?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.file"><img src="https://travis-ci.org/KWB-R/kwb.file.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.file"><img src="http://www.r-pkg.org/badges/version/kwb.file" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3872888"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3872888.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.file/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.file/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.flusshygiene">kwb.flusshygiene</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.flusshygiene/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.flusshygiene"><img src="https://codecov.io/github/KWB-R/kwb.flusshygiene/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-flusshygiene/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.flusshygiene?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.flusshygiene"><img src="https://travis-ci.org/KWB-R/kwb.flusshygiene.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.flusshygiene"><img src="http://www.r-pkg.org/badges/version/kwb.flusshygiene" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.flusshygiene/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.flusshygiene/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.flusshygiene'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.flusshygiene.app">kwb.flusshygiene.app</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.flusshygiene.app/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.flusshygiene.app"><img src="https://codecov.io/github/KWB-R/kwb.flusshygiene.app/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-flusshygiene-app/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.flusshygiene.app?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.flusshygiene.app"><img src="https://travis-ci.org/KWB-R/kwb.flusshygiene.app.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.flusshygiene.app"><img src="http://www.r-pkg.org/badges/version/kwb.flusshygiene.app" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.flusshygiene.app/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.flusshygiene.app/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.flusshygiene.app'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.geosalz">kwb.geosalz</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.geosalz/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.geosalz"><img src="https://codecov.io/github/KWB-R/kwb.geosalz/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-geosalz/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.geosalz?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.geosalz"><img src="https://travis-ci.org/KWB-R/kwb.geosalz.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.geosalz"><img src="http://www.r-pkg.org/badges/version/kwb.geosalz" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.2563870"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.2563870.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.geosalz/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.geosalz'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.hantush">kwb.hantush</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.hantush/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.hantush"><img src="https://codecov.io/github/KWB-R/kwb.hantush/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-hantush/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.hantush?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.hantush"><img src="https://travis-ci.org/KWB-R/kwb.hantush.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.hantush"><img src="http://www.r-pkg.org/badges/version/kwb.hantush" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3429722"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3429722.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.hantush/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.heatsine">kwb.heatsine</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.heatsine/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.heatsine"><img src="https://codecov.io/github/KWB-R/kwb.heatsine/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-heatsine/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.heatsine?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.heatsine"><img src="https://travis-ci.org/KWB-R/kwb.heatsine.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.heatsine"><img src="http://www.r-pkg.org/badges/version/kwb.heatsine" alt="CRAN_Status_Badge" /></a></td>
+<td align="center">Multiple badges found!</td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.heatsine/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.heatsine/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.heatsine'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.heatsine.opencpu">kwb.heatsine.opencpu</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.heatsine.opencpu/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.heatsine.opencpu"><img src="https://codecov.io/github/KWB-R/kwb.heatsine.opencpu/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-heatsine-opencpu/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.heatsine.opencpu?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.heatsine.opencpu"><img src="https://travis-ci.org/KWB-R/kwb.heatsine.opencpu.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.heatsine.opencpu"><img src="http://www.r-pkg.org/badges/version/kwb.heatsine.opencpu" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.4106371"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.4106371.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.heatsine.opencpu/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.heatsine.opencpu'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/kwb.heatsine.opencpu'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.kuras.db">kwb.kuras.db</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.kuras.db/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.kuras.db"><img src="https://codecov.io/github/KWB-R/kwb.kuras.db/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-kuras-db/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.kuras.db?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.kuras.db"><img src="https://travis-ci.org/KWB-R/kwb.kuras.db.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.kuras.db"><img src="http://www.r-pkg.org/badges/version/kwb.kuras.db" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.kuras.db/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.kuras.db/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.lca">kwb.lca</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.lca/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.lca"><img src="https://codecov.io/github/KWB-R/kwb.lca/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-lca/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.lca?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.lca"><img src="https://travis-ci.org/KWB-R/kwb.lca.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.lca"><img src="http://www.r-pkg.org/badges/version/kwb.lca" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604184"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604184.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.lca/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb-lca'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.logger">kwb.logger</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.logger/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.logger"><img src="https://codecov.io/github/KWB-R/kwb.logger/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-logger/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.logger?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.logger"><img src="https://travis-ci.org/KWB-R/kwb.logger.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.logger"><img src="http://www.r-pkg.org/badges/version/kwb.logger" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.1289425"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.1289425.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.logger/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.logger'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.matomo">kwb.matomo</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.matomo/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.matomo"><img src="https://codecov.io/github/KWB-R/kwb.matomo/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-matomo/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.matomo?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.matomo"><img src="https://travis-ci.org/KWB-R/kwb.matomo.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.matomo"><img src="http://www.r-pkg.org/badges/version/kwb.matomo" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.matomo/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.matomo'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.monitoring">kwb.monitoring</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.monitoring/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.monitoring"><img src="https://codecov.io/github/KWB-R/kwb.monitoring/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-monitoring/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.monitoring?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.monitoring"><img src="https://travis-ci.org/KWB-R/kwb.monitoring.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.monitoring"><img src="http://www.r-pkg.org/badges/version/kwb.monitoring" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.monitoring/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.monitoring/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.nextcloud">kwb.nextcloud</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.nextcloud/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.nextcloud"><img src="https://codecov.io/github/KWB-R/kwb.nextcloud/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-nextcloud/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.nextcloud?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.nextcloud"><img src="https://travis-ci.org/KWB-R/kwb.nextcloud.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.nextcloud"><img src="http://www.r-pkg.org/badges/version/kwb.nextcloud" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3875709"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3875709.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.nextcloud/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.nextcloud/dev/index.html">X</a></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.nextcloud'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.orcid">kwb.orcid</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.orcid/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.orcid"><img src="https://codecov.io/github/KWB-R/kwb.orcid/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-orcid/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.orcid?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.orcid"><img src="https://travis-ci.org/KWB-R/kwb.orcid.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.orcid"><img src="http://www.r-pkg.org/badges/version/kwb.orcid" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.orcid/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.orcid/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.pathdict">kwb.pathdict</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.pathdict/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.pathdict"><img src="https://codecov.io/github/KWB-R/kwb.pathdict/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-pathdict/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.pathdict?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.pathdict"><img src="https://travis-ci.org/KWB-R/kwb.pathdict.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.pathdict"><img src="http://www.r-pkg.org/badges/version/kwb.pathdict" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604196"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604196.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pathdict/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.pathdict'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.pilot">kwb.pilot</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.pilot/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.pilot"><img src="https://codecov.io/github/KWB-R/kwb.pilot/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-pilot/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.pilot?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.pilot"><img src="https://travis-ci.org/KWB-R/kwb.pilot.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.pilot"><img src="http://www.r-pkg.org/badges/version/kwb.pilot" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pilot/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.pkgbuild">kwb.pkgbuild</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.pkgbuild/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.pkgbuild"><img src="https://codecov.io/github/KWB-R/kwb.pkgbuild/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-pkgbuild/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.pkgbuild?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.pkgbuild"><img src="https://travis-ci.org/KWB-R/kwb.pkgbuild.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.pkgbuild"><img src="http://www.r-pkg.org/badges/version/kwb.pkgbuild" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.4558125"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.4558125.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pkgbuild/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pkgbuild/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.pkgstatus">kwb.pkgstatus</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.pkgstatus/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.pkgstatus"><img src="https://codecov.io/github/KWB-R/kwb.pkgstatus/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-pkgstatus/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.pkgstatus?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.pkgstatus"><img src="https://travis-ci.org/KWB-R/kwb.pkgstatus.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.pkgstatus"><img src="http://www.r-pkg.org/badges/version/kwb.pkgstatus" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604014"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604014.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pkgstatus/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/kwb.pkgstatus'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.plot">kwb.plot</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.plot/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.plot"><img src="https://codecov.io/github/KWB-R/kwb.plot/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-plot/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.plot?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.plot"><img src="https://travis-ci.org/KWB-R/kwb.plot.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.plot"><img src="http://www.r-pkg.org/badges/version/kwb.plot" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3611500"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3611500.svg" alt="DOI" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.plot/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.prep">kwb.prep</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.prep/blob/master/LICENSE">NOASSERTION</a></td>
+<td align="center"></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.prep"><img src="https://codecov.io/github/KWB-R/kwb.prep/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-prep/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.prep?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.prep"><img src="https://travis-ci.org/KWB-R/kwb.prep.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.prep"><img src="http://www.r-pkg.org/badges/version/kwb.prep" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.prep/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.pubs">kwb.pubs</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.pubs/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.pubs"><img src="https://codecov.io/github/KWB-R/kwb.pubs/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-pubs/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.pubs?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.pubs"><img src="https://travis-ci.org/KWB-R/kwb.pubs.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.pubs"><img src="http://www.r-pkg.org/badges/version/kwb.pubs" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604178"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604178.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pubs/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.pubs/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.qmra">kwb.qmra</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.qmra/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.qmra"><img src="https://codecov.io/github/KWB-R/kwb.qmra/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-qmra/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.qmra?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.qmra"><img src="https://travis-ci.org/KWB-R/kwb.qmra.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.qmra"><img src="http://www.r-pkg.org/badges/version/kwb.qmra" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.4558087"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.4558087.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.qmra/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/kwb.qmra'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.read">kwb.read</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.read/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.read"><img src="https://codecov.io/github/KWB-R/kwb.read/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-read/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.read?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.read"><img src="https://travis-ci.org/KWB-R/kwb.read.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.read"><img src="http://www.r-pkg.org/badges/version/kwb.read" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604187"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604187.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.read/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.read'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.readxl">kwb.readxl</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.readxl/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.readxl"><img src="https://codecov.io/github/KWB-R/kwb.readxl/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-readxl/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.readxl?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.readxl"><img src="https://travis-ci.org/KWB-R/kwb.readxl.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.readxl"><img src="http://www.r-pkg.org/badges/version/kwb.readxl" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604187"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604187.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.readxl/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.readxl'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.resilience">kwb.resilience</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.resilience/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.resilience"><img src="https://codecov.io/github/KWB-R/kwb.resilience/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-resilience/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.resilience?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.resilience"><img src="https://travis-ci.org/KWB-R/kwb.resilience.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.resilience"><img src="http://www.r-pkg.org/badges/version/kwb.resilience" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.2243961"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.2243961.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.resilience/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.resilience'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.site">kwb.site</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.site/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.site"><img src="https://codecov.io/github/KWB-R/kwb.site/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-site/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.site?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.site"><img src="https://travis-ci.org/KWB-R/kwb.site.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.site"><img src="http://www.r-pkg.org/badges/version/kwb.site" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.site/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.svn">kwb.svn</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.svn/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.svn"><img src="https://codecov.io/github/KWB-R/kwb.svn/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-svn/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.svn?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.svn"><img src="https://travis-ci.org/KWB-R/kwb.svn.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.svn"><img src="http://www.r-pkg.org/badges/version/kwb.svn" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.svn/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.svn'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.test">kwb.test</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.test/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.test"><img src="https://codecov.io/github/KWB-R/kwb.test/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-test/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.test?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.test"><img src="https://travis-ci.org/KWB-R/kwb.test.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.test"><img src="http://www.r-pkg.org/badges/version/kwb.test" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.test/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.umberto">kwb.umberto</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.umberto/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.umberto"><img src="https://codecov.io/github/KWB-R/kwb.umberto/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-umberto/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.umberto?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.umberto"><img src="https://travis-ci.org/KWB-R/kwb.umberto.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.umberto"><img src="http://www.r-pkg.org/badges/version/kwb.umberto" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604007"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604007.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.umberto/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.umberto'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.utils">kwb.utils</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.utils/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.utils"><img src="https://codecov.io/github/KWB-R/kwb.utils/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-utils/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.utils?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.utils"><img src="https://travis-ci.org/KWB-R/kwb.utils.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.utils"><img src="http://www.r-pkg.org/badges/version/kwb.utils" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.4551446"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.4551446.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.utils/index.html">X</a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.utils/dev/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/kwb.utils'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/kwb.vs2dh">kwb.vs2dh</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.vs2dh/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.vs2dh"><img src="https://codecov.io/github/KWB-R/kwb.vs2dh/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-vs2dh/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.vs2dh?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.vs2dh"><img src="https://travis-ci.org/KWB-R/kwb.vs2dh.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.vs2dh"><img src="http://www.r-pkg.org/badges/version/kwb.vs2dh" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.vs2dh/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"><a href='https://gitlab.com/KWB-R/kwb.vs2dh'><img src='https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png' title='Gitlab' width='24' height = '24'/></a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/kwb.wtaq">kwb.wtaq</a></td>
+<td align="center"><a href="https://github.com/KWB-R/kwb.wtaq/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/kwb.wtaq"><img src="https://codecov.io/github/KWB-R/kwb.wtaq/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/kwb-wtaq/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/kwb.wtaq?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/kwb.wtaq"><img src="https://travis-ci.org/KWB-R/kwb.wtaq.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/kwb.wtaq"><img src="http://www.r-pkg.org/badges/version/kwb.wtaq" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.61610"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.61610.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/kwb.wtaq/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href='https://kwb-r.ocpu.io/kwb.wtaq'><img src='https://avatars2.githubusercontent.com/u/28672890?s=200&v=4' title='OpenCpu' width='24' height = '24'/></a></td>
+</tr>
+<tr class="even">
+<td align="center"><a href="https://github.com/KWB-R/pkgmeta">pkgmeta</a></td>
+<td align="center"><a href="https://github.com/KWB-R/pkgmeta/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/pkgmeta"><img src="https://codecov.io/github/KWB-R/pkgmeta/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/pkgmeta/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/pkgmeta?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/pkgmeta"><img src="https://travis-ci.org/KWB-R/pkgmeta.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/pkgmeta"><img src="http://www.r-pkg.org/badges/version/pkgmeta" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3604093"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3604093.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/pkgmeta/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><a href="https://github.com/KWB-R/qmra.db">qmra.db</a></td>
+<td align="center"><a href="https://github.com/KWB-R/qmra.db/blob/master/LICENSE">MIT</a></td>
+<td align="center"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a></td>
+<td align="center"><a href="https://codecov.io/github/KWB-R/qmra.db"><img src="https://codecov.io/github/KWB-R/qmra.db/branch/master/graphs/badge.svg" alt="codecov" /></a></td>
+<td align="center"><a href="https://ci.appveyor.com/project/KWB-R/qmra-db/branch/master"><img src="https://ci.appveyor.com/api/projects/status/github/KWB-R/qmra.db?branch=master&amp;svg=true" alt="Appveyor" /></a></td>
+<td align="center"><a href="https://travis-ci.org/KWB-R/qmra.db"><img src="https://travis-ci.org/KWB-R/qmra.db.svg?branch=master" alt="Travis" /></a></td>
+<td align="center"><a href="http://www.r-pkg.org/pkg/qmra.db"><img src="http://www.r-pkg.org/badges/version/qmra.db" alt="CRAN_Status_Badge" /></a></td>
+<td align="center"><a href="https://doi.org/10.5281/zenodo.3339322"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.3339322.svg" alt="DOI" /></a></td>
+<td align="center"><a href="http://kwb-r.github.io/qmra.db/index.html">X</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
